@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+/*Vars*/
+:root{
+    --primeColor: #f60f20;
+    --secondColor: #1b206e;
+}
+/*General styles*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    color: #111;
+}
+h1{
+    font-size: 30px;
+    font-weight: 500;
+}
+p{
+    margin: 20px 0 10px 0;
+    font-size: 1.1rem;
+}
+.logo{
+    position: absolute;
+    top: 30px;
+    left: 100px;
+    font-size: 2rem;
+    font-weight: 700;
+    z-index: 10;
+}
+/*Navigation stlyes*/
+.navigation{
+    position: fixed;
+    bottom: 100%;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+}
+.navigation.active{
+    left: 0;
+    bottom: 0;
+}
+.navigation ul{
+    position: relative;
+}
+.navigation ul li{
+    position: relative;
+    list-style: none;
+    text-align: center;
+}
+.navigation ul li a{
+    font-size: 2.2rem;
+    color: #111;
+    text-decoration: none;
+    font-weight: 300;
+}
+.navigation ul li a:hover{
+    color: var(--primeColor)
+}
+.navigation .socialBar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navigation .socialBar a{
+    transform: scale(0.5);
+    display: inline-block;
+}
+.navigation .emailIcon{
+    position: absolute;
+    bottom: 20px;
+    transform: scale(0.5);
+}
+.toggle{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: var(--primeColor) url("Images/menu.png");
+    z-index: 10;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+.toggle.active{
+    background: var(--primeColor) url("Images/close.png");
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+/*Homepage styles*/
+main{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    padding: 100px;
+    margin-top: 60px;
+}
+main.home{
+    flex-direction: row;
+    margin-top: 0;
+}
+.homeImg{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 110%;
+    
+}
+.homeContent{
+    z-index: 8;
+    max-width: 600px;
+    position: relative;
+}
+.button{
+    background: var(--primeColor);
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 30px;
+    margin: 20px 0px;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+}
+.button:hover{
+    transform: scale(0.95);
+}
+/*Services css*/
+.services{
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    text-align: center;
+}
+.services .service{
+    padding: 30px;
+}
+.services .service:hover{
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.services .service h2{
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 20px;
+    color: var(--secondColor)
+}
+.services .service .icon img{
+    max-width: 100px;
+}
+/*Work css*/
+.work{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+.work .item{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    margin: 5px;
+}
+.work .item img{
+    width: 100%;
+    height: 100%
+}
+.work .item .action{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+.work .item .action a{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 5px 15px;
+}
+.work .item .action:hover{
+    opacity: 1;
+    transition: 0.5s;
+}
+/*Contact css*/
+.contact{
+    position: relative;
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.contactForm{
+    position: relative;
+    background: #f9f9f9;
+    width: calc(100% - 400px);
+    padding: 60px 40px 20px;
+}
+.contactForm form{
+    width: 100%;
+}
+.contactForm .row{
+    width: 100%;
+    display: flex;
+}
+.contactForm .input50{
+    width: 50%;
+    margin: 0 10px;
+}
+.contactForm .input100{
+    width: 100%;
+    margin: 0 10px;
+}
+.contactForm .row input, .contactForm .row textarea{
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.2);
+    color: #111;
+    background: transparent;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 10px 0;
+    resize: none;
+}
+.contactForm .row textarea{
+    height: 150px;
+}
+.contactForm .row input[type='submit']{
+    background: var(--secondColor);
+    color: #fff;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    border: 0;
+    cursor: pointer;
+}
+.contactInfo{
+    width: 350px;
+    background: #f9f9f9;
+    padding: 60px 40px 20px;
+}
+.contactInfo .infoBox{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+.contactInfo .infoBox .contactIcon{
+    width: 20px;
+    margin-right: 40px;
+}
+.contactInfo .infoBox .details h4{
+    color: var(--secondColor);
+}
+.contactInfo .infoBox .details p, .contactInfo .infoBox .details a{
+    color:  #111;
+}
+/*Media queies*/
+@media(max-width: 1060px){
+    .homeImg{
+        display: none;
+    }
+    .logo{
+        top: 10px;
+        left: 40px;
+        font-size: 1.5rem;
+    }
+    main{
+        padding: 100px 40px;
+    }
+    .navigation ul li a{
+        font-size: 1.8rem;
+    }
+    .services{
+        grid-template-columns: 1fr 1fr;
+    }
+    .contact{
+        flex-direction: column;
+    }
+    .contactForm{
+        width: 100%;
+        padding: 30px 30px 20px;
+    }
+    .contactForm .row{
+        flex-direction: column;
+    }
+    .contactForm .input50, .contactForm .input100{
+        width: 100%;
+        margin: 0;
+    }
+    .contactInfo{
+        width: 100%;
+        margin-top: 20px;
+        padding: 30px 30px 20px;
+    }
+}
+@media(max-width: 500px){
+    main.home{
+        margin-top: 90px;
+    }
+    .logo{
+        top: 10px;
+        left: 10px;
+        font-size: 1.5rem;
+    }
+    .services{
+        grid-template-columns: 1fr;
+    }
+    .services .service{
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+}
